@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Maison — Seasonal French Cuisine</title>
+<meta name="description" content="La Maison. Seasonal French cuisine in Portland since 2012. Chef Marie Laurent.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="La Maison — Seasonal French Cuisine">
+<meta property="og:description" content="Seasonal French cuisine in Portland since 2012. Reserve a table.">
+<meta property="og:type" content="restaurant">
+<meta property="og:image" content="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200">
+
+<!-- Fonts: Playfair Display (display), Cormorant Garamond (section titles), Inter (body) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,400;1,600&family=Inter:opsz,wght@14..32,400;14..32,500&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+
+<style>
+  /* ================================================================
+     DESIGN TOKENS — La Maison
+     Palette: espresso → cream → amber → gold
+     Type: Playfair Display / Cormorant Garamond / Inter
+     ================================================================ */
+
+  :root {
+    --espresso: #2C1810;
+    --espresso-90: rgba(44, 24, 16, 0.92);
+    --espresso-60: rgba(44, 24, 16, 0.60);
+    --espresso-40: rgba(44, 24, 16, 0.40);
+    --cream: #F5F0E8;
+    --cream-80: rgba(245, 240, 232, 0.80);
+    --amber: #C4956A;
+    --amber-15: rgba(196, 149, 106, 0.15);
+    --gold: #B8935A;
+    --gold-20: rgba(184, 147, 90, 0.20);
+    --warm-gray: #3A322C;
+    --light-warm: #E8DFD2;
+    --border-warm: #D4C8B8;
+    --white: #FFFDF9;
+
+    --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+    --font-section: "Cormorant Garamond", "Times New Roman", serif;
+    --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+    --max-text: 720px;
+    --max-wide: 1040px;
+    --nav-h: 64px;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--nav-h);
+  }
+
+  body {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--warm-gray);
+    background: var(--cream);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* ================================================================
+     NAV — Fixed, minimal. Transparent on hero, solid on scroll.
+     ================================================================ */
+
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--nav-h);
+    padding: 0 40px;
+    transition: background 0.4s ease, box-shadow 0.4s ease;
+    background: transparent;
+  }
+
+  .nav.scrolled {
+    background: var(--espresso-90);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .nav-logo {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.03em;
+    color: var(--light-warm);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.7rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--light-warm);
+    text-decoration: none;
+    padding: 4px 0;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s, color 0.3s;
+  }
+
+  .nav-links a:hover {
+    color: var(--amber);
+    border-bottom-color: var(--amber);
+  }
+
+  .nav-cta {
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--espresso);
+    background: var(--amber);
+    padding: 8px 20px;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.3s;
+  }
+
+  .nav-cta:hover {
+    background: var(--gold);
+    transform: translateY(-1px);
+  }
+
+  /* Mobile nav: horizontal scrollable tabs, no hamburger */
+  @media (max-width: 767px) {
+    .nav {
+      flex-wrap: wrap;
+      height: auto;
+      padding: 12px 16px;
+      gap: 8px;
+    }
+    .nav.scrolled {
+      background: var(--espresso);
+    }
+    .nav-logo {
+      flex: 0 0 auto;
+    }
+    .nav-links {
+      order: 3;
+      flex: 1 1 100%;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 8px 0 2px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .nav-links::-webkit-scrollbar { display: none; }
+    .nav-links a {
+      white-space: nowrap;
+      font-size: 0.65rem;
+    }
+    .nav-cta {
+      font-size: 0.65rem;
+      padding: 6px 14px;
+    }
+  }
+
+  /* ================================================================
+     SECTIONS — Each is a full-viewport or generous block.
+     ================================================================ */
+
+  section {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section-inner {
+    max-width: var(--max-wide);
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  @media (max-width: 767px) {
+    .section-inner { padding: 0 20px; }
+  }
+
+  /* ================================================================
+     HERO — Espresso background + restaurant photo overlay.
+     The thesis: a brass-plaque restaurant name, not a food billboard.
+     ================================================================ */
+
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--espresso);
+    position: relative;
+  }
+
+  /* Background image with heavy warm overlay */
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1800&q=80');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.55;
+    filter: saturate(0.85) brightness(0.9);
+    transition: opacity 0.8s ease;
+    will-change: opacity;
+  }
+
+  /* Warm gradient overlay — keeps edges dark so text stays readable */
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 45%, var(--espresso) 80%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 24px;
+    max-width: 680px;
+  }
+
+  /* The name IS the hero — type as thesis */
+  .hero-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: var(--white);
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: heroReveal 1.4s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+
+  .hero-tagline {
+    font-family: var(--font-section);
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(1rem, 2.2vw, 1.35rem);
+    line-height: 1.6;
+    color: var(--light-warm);
+    opacity: 0;
+    transform: translateY(24px);
+    animation: heroReveal 1.2s 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+
+  .hero-tagline span {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.8em;
+    font-style: normal;
+    font-family: var(--font-body);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--amber);
+  }
+
+  @keyframes heroReveal {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Scroll indicator — understated, just a thin line that pulses */
+  .scroll-indicator {
+    position: absolute;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--amber), transparent);
+    animation: scrollPulse 2.4s ease-in-out infinite;
+  }
+
+  .scroll-word {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(1); }
+    50% { opacity: 0.8; transform: scaleY(1.15); }
+  }
+
+  /* ================================================================
+     STORY — Cream background, editorial two-column.
+     ================================================================ */
+
+  .story {
+    background: var(--cream);
+    padding: 120px 0;
+  }
+
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .story-text {
+    max-width: 480px;
+  }
+
+  .section-eyebrow {
+    font-size: 0.65rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--amber);
+    margin-bottom: 20px;
+  }
+
+  .section-title {
+    font-family: var(--font-section);
+    font-weight: 600;
+    font-size: clamp(1.6rem, 3.2vw, 2.1rem);
+    line-height: 1.25;
+    color: var(--espresso);
+    margin-bottom: 20px;
+  }
+
+  .story-text p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--warm-gray);
+    margin-bottom: 16px;
+  }
+
+  .story-text p:last-child { margin-bottom: 0; }
+
+  /* Pull quote — the chef's voice, set apart */
+  .chef-quote {
+    margin-top: 28px;
+    padding-left: 20px;
+    border-left: 2px solid var(--gold);
+  }
+
+  .chef-quote blockquote {
+    font-family: var(--font-section);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.55;
+    color: var(--espresso);
+  }
+
+  .chef-quote cite {
+    display: block;
+    margin-top: 10px;
+    font-family: var(--font-body);
+    font-style: normal;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--amber);
+  }
+
+  .story-photo {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    border-radius: 2px;
+  }
+
+  .story-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: saturate(0.85) contrast(1.05);
+    transition: transform 0.6s ease;
+  }
+
+  .story-photo:hover img {
+    transform: scale(1.03);
+  }
+
+  /* Subtle frame offset — a quiet detail */
+  .story-photo::after {
+    content: '';
+    position: absolute;
+    inset: 12px;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 1px;
+    pointer-events: none;
+  }
+
+  @media (max-width: 767px) {
+    .story { padding: 80px 0; }
+    .story-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .story-photo {
+      order: -1;
+      aspect-ratio: 3 / 4;
+      max-height: 400px;
+    }
+    .story-text { max-width: none; }
+  }
+
+  /* ================================================================
+     MENU — Light cream background. Two-column editorial grid.
+     SIGNATURE: the amber dot on hover — a candle being lit.
+     ================================================================ */
+
+  .menu {
+    background: var(--white);
+    padding: 120px 0;
+  }
+
+  .menu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px 64px;
+  }
+
+  .menu-category-title {
+    font-family: var(--font-section);
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: var(--espresso);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-warm);
+  }
+
+  /* Each dish is a row */
+  .dish {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    gap: 0 16px;
+    padding: 14px 0;
+    border-bottom: 1px dotted var(--border-warm);
+    cursor: default;
+    position: relative;
+    transition: padding-left 0.3s ease;
+  }
+
+  /* SIGNATURE: the candle — a warm glow and subtle indent */
+  .dish::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--amber);
+    border-radius: 0 2px 2px 0;
+    opacity: 0;
+    transform: scaleY(0.5);
+    transition: opacity 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  .dish:hover::before {
+    opacity: 1;
+    transform: scaleY(0.85);
+    box-shadow: 0 0 14px 3px var(--amber-15);
+  }
+
+  .dish:hover {
+    padding-left: 12px;
+  }
+
+  .dish-name {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--espresso);
+    grid-column: 1;
+    grid-row: 1;
+    transition: color 0.3s;
+  }
+
+  .dish:hover .dish-name {
+    color: var(--amber);
+  }
+
+  .dish-price {
+    font-family: var(--font-section);
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--warm-gray);
+    grid-column: 2;
+    grid-row: 1;
+    text-align: right;
+    transition: color 0.3s;
+  }
+
+  .dish:hover .dish-price {
+    color: var(--amber);
+  }
+
+  .dish-desc {
+    font-size: 0.8rem;
+    line-height: 1.55;
+    color: #8C8278;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    margin-top: 3px;
+  }
+
+  /* Food interlude photo — breaks the menu rhythm */
+  .menu-photo-interlude {
+    grid-column: 1 / -1;
+    aspect-ratio: 3 / 1;
+    overflow: hidden;
+    border-radius: 2px;
+    margin: 8px 0;
+  }
+
+  .menu-photo-interlude img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.8) brightness(0.95);
+  }
+
+  @media (max-width: 767px) {
+    .menu { padding: 80px 0; }
+    .menu-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .menu-photo-interlude {
+      aspect-ratio: 16 / 9;
+      margin: 4px 0;
+    }
+  }
+
+  /* ================================================================
+     GALLERY — Full-width photo strip. No text, just atmosphere.
+     ================================================================ */
+
+  .gallery {
+    background: var(--espresso);
+    padding: 0;
+  }
+
+  .gallery-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    line-height: 0;
+  }
+
+  .gallery-strip figure {
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 1;
+  }
+
+  .gallery-strip img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.7) brightness(0.7);
+    transition: filter 0.6s ease, transform 0.6s ease;
+  }
+
+  .gallery-strip figure:hover img {
+    filter: saturate(1) brightness(0.95);
+    transform: scale(1.04);
+  }
+
+  @media (max-width: 767px) {
+    .gallery-strip {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* ================================================================
+     PRIVATE DINING — Events for 8–24 guests.
+     ================================================================ */
+
+  .private {
+    background: var(--white);
+    padding: 120px 0;
+  }
+
+  .private-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .private-text {
+    max-width: 440px;
+  }
+
+  .private-text p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--warm-gray);
+    margin-bottom: 14px;
+  }
+
+  .private-features {
+    list-style: none;
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .private-features li {
+    font-size: 0.8rem;
+    color: var(--warm-gray);
+    padding: 10px 0;
+    border-bottom: 1px dotted var(--border-warm);
+  }
+
+  .private-features li::before {
+    content: '';
+    display: inline-block;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--amber);
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+
+  .private-photo {
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    border-radius: 2px;
+  }
+
+  .private-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .private-cta {
+    display: inline-block;
+    margin-top: 24px;
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--amber);
+    text-decoration: none;
+    border-bottom: 1px solid var(--amber);
+    padding-bottom: 4px;
+    transition: color 0.3s, border-color 0.3s;
+  }
+
+  .private-cta:hover {
+    color: var(--espresso);
+    border-color: var(--espresso);
+  }
+
+  @media (max-width: 767px) {
+    .private { padding: 80px 0; }
+    .private-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .private-photo {
+      aspect-ratio: 3 / 4;
+      max-height: 320px;
+    }
+    .private-text { max-width: none; }
+  }
+
+  /* ================================================================
+     BOOKING — Cream background. Two columns: info + form.
+     ================================================================ */
+
+  .booking {
+    background: var(--cream);
+    padding: 120px 0;
+  }
+
+  .booking-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+
+  .booking-info {
+    max-width: 400px;
+  }
+
+  .booking-info .hours {
+    font-size: 0.9rem;
+    line-height: 2;
+    color: var(--warm-gray);
+  }
+
+  .booking-info .hours strong {
+    display: block;
+    font-weight: 500;
+    color: var(--espresso);
+    margin-top: 20px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  .booking-info .hours strong:first-child { margin-top: 0; }
+
+  .booking-info address {
+    font-style: normal;
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: #8C8278;
+    line-height: 1.7;
+  }
+
+  /* Form — integrated, same type scale, not an iframe */
+  .booking-form {
+    background: var(--white);
+    padding: 36px;
+    border-radius: 2px;
+    border: 1px solid var(--border-warm);
+  }
+
+  .form-group {
+    margin-bottom: 18px;
+  }
+
+  .form-label {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--amber);
+    margin-bottom: 6px;
+  }
+
+  .form-input {
+    width: 100%;
+    padding: 12px 14px;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--espresso);
+    background: var(--cream);
+    border: 1px solid var(--border-warm);
+    border-radius: 2px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    outline: none;
+  }
+
+  .form-input:focus {
+    border-color: var(--amber);
+    box-shadow: 0 0 0 3px var(--amber-15);
+  }
+
+  .form-input::placeholder {
+    color: #B8AFA5;
+  }
+
+  .form-row-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .form-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238C8278' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+  }
+
+  .btn-reserve {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    margin-top: 24px;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--white);
+    background: var(--espresso);
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+  }
+
+  .btn-reserve:hover {
+    background: var(--amber);
+    transform: translateY(-2px);
+  }
+
+  .btn-reserve:focus-visible {
+    outline: 2px solid var(--amber);
+    outline-offset: 2px;
+  }
+
+  /* Booking embed fallback note */
+  .booking-embed-note {
+    margin-top: 16px;
+    font-size: 0.7rem;
+    color: #B8AFA5;
+    text-align: center;
+  }
+
+  @media (max-width: 767px) {
+    .booking { padding: 80px 0; }
+    .booking-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .booking-form { padding: 24px; }
+    .form-row-split {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* ================================================================
+     FOOTER — Espresso, minimal.
+     ================================================================ */
+
+  .footer {
+    background: var(--espresso);
+    padding: 48px 40px;
+    text-align: center;
+  }
+
+  .footer address {
+    font-style: normal;
+    font-size: 0.8rem;
+    line-height: 1.9;
+    color: #8C8278;
+  }
+
+  .footer address strong {
+    font-weight: 500;
+    color: var(--light-warm);
+    display: block;
+    margin-bottom: 4px;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    letter-spacing: 0.03em;
+  }
+
+  .footer-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    font-size: 0.65rem;
+  }
+
+  .footer-links a {
+    color: #6E655C;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    transition: color 0.3s;
+  }
+
+  .footer-links a:hover { color: var(--amber); }
+
+  /* ================================================================
+     SCROLL REVEAL — IntersectionObserver driven.
+     All compositor-only properties (transform + opacity).
+     ================================================================ */
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Stagger children inside a reveal container */
+  .reveal-stagger > * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .reveal-stagger.visible > *:nth-child(1) { transition-delay: 0s; opacity: 1; transform: translateY(0); }
+  .reveal-stagger.visible > *:nth-child(2) { transition-delay: 0.1s; opacity: 1; transform: translateY(0); }
+  .reveal-stagger.visible > *:nth-child(3) { transition-delay: 0.2s; opacity: 1; transform: translateY(0); }
+  .reveal-stagger.visible > *:nth-child(4) { transition-delay: 0.3s; opacity: 1; transform: translateY(0); }
+  .reveal-stagger.visible > *:nth-child(5) { transition-delay: 0.4s; opacity: 1; transform: translateY(0); }
+  .reveal-stagger.visible > *:nth-child(6) { transition-delay: 0.5s; opacity: 1; transform: translateY(0); }
+
+  /* ================================================================
+     REDUCED MOTION — Fade only, no movement.
+     ================================================================ */
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.3s !important;
+    }
+    .reveal {
+      transform: none;
+    }
+    .hero-name, .hero-tagline {
+      opacity: 1;
+      transform: none;
+      animation: none;
+    }
+  }
+
+  /* ================================================================
+     FOCUS — Visible keyboard focus ring.
+     ================================================================ */
+
+  :focus-visible {
+    outline: 2px solid var(--amber);
+    outline-offset: 2px;
+  }
+
+  a:focus-visible {
+    border-radius: 2px;
+  }
+
+  /* ================================================================
+     SELECTION — Warm, matching the palette.
+     ================================================================ */
+
+  ::selection {
+    background: var(--amber);
+    color: var(--white);
+  }
+
+  /* ================================================================
+     SKIP LINK — Keyboard accessibility
+     ================================================================ */
+
+  .skip-link {
+    position: absolute;
+    top: -100%;
+    left: 16px;
+    z-index: 200;
+    padding: 10px 18px;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--espresso);
+    background: var(--amber);
+    border-radius: 2px;
+    text-decoration: none;
+    transition: top 0.2s ease;
+  }
+
+  .skip-link:focus {
+    top: 10px;
+  }
+</style>
+</head>
+<body>
+
+<!-- Skip-to-content for keyboard users -->
+<a href="#story" class="skip-link">Skip to content</a>
+
+<!-- ====== NAV ====== -->
+<nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+  <a href="#" class="nav-logo">La Maison</a>
+  <ul class="nav-links">
+    <li><a href="#story">Story</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#private">Private</a></li>
+    <li><a href="#visit">Visit</a></li>
+  </ul>
+  <a href="#booking" class="nav-cta">Reserve</a>
+</nav>
+
+<!-- ====== HERO ====== -->
+<section class="hero" id="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <h1 class="hero-name">La Maison</h1>
+    <p class="hero-tagline">
+      Seasonal French cuisine in the heart of Portland.
+      <span>Since 2012</span>
+    </p>
+  </div>
+
+  <div class="scroll-indicator" aria-hidden="true">
+    <div class="scroll-line"></div>
+    <span class="scroll-word">Scroll</span>
+  </div>
+</section>
+
+<!-- ====== STORY ====== -->
+<section class="story" id="story">
+  <div class="section-inner">
+    <div class="story-grid reveal">
+      <div class="story-text reveal-stagger">
+        <p class="section-eyebrow">Our Story</p>
+        <h2 class="section-title">A kitchen built on Sunday family dinners.</h2>
+        <p>
+          Chef Marie Laurent grew up in Lyon, where her grandmother ruled the stove
+          and the best conversations happened between courses. La Maison is her love
+          letter to that table — seasonal, unhurried, made with hands that remember.
+        </p>
+        <p>
+          Every dish starts with what the farmers bring in that morning. The menu
+          changes when the weather does. What stays the same: the butter comes from
+          Normandy, the wine list favors small producers, and the bread is baked
+          twice a day.
+        </p>
+        <div class="chef-quote">
+          <blockquote>
+            "I'm not trying to reinvent French food. I'm trying to remind you why you fell in love with it."
+          </blockquote>
+          <cite>— Marie Laurent, Chef &amp; Owner</cite>
+        </div>
+      </div>
+      <div class="story-photo reveal">
+        <img
+          src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=600&q=80"
+          alt="Chef Marie Laurent in the La Maison kitchen, plating a dish with focused precision"
+          loading="lazy"
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== MENU ====== -->
+<section class="menu" id="menu">
+  <div class="section-inner">
+    <p class="section-eyebrow reveal">Current Menu</p>
+    <h2 class="section-title reveal" style="margin-bottom:48px;">What's on the table this season.</h2>
+
+    <div class="menu-grid reveal-stagger">
+
+      <!-- Left column -->
+      <div>
+        <h3 class="menu-category-title">To Start</h3>
+
+        <div class="dish">
+          <span class="dish-name">Sunchoke Velouté</span>
+          <span class="dish-price">18</span>
+          <span class="dish-desc">Black truffle, toasted hazelnut, chive oil</span>
+        </div>
+
+        <div class="dish">
+          <span class="dish-name">Steak Tartare</span>
+          <span class="dish-price">24</span>
+          <span class="dish-desc">Hand-cut prime beef, caper, quail egg, grilled sourdough</span>
+        </div>
+
+        <div class="dish">
+          <span class="dish-name">Roasted Beet &amp; Chevre</span>
+          <span class="dish-price">16</span>
+          <span class="dish-desc">Whipped goat cheese, candied walnut, blood orange</span>
+        </div>
+
+        <h3 class="menu-category-title" style="margin-top:32px;">Mains</h3>
+
+        <div class="dish">
+          <span class="dish-name">Duck Confit</span>
+          <span class="dish-price">38</span>
+          <span class="dish-desc">Lavender honey, roasted root vegetables, thyme jus</span>
+        </div>
+
+        <div class="dish">
+          <span class="dish-name">Pan-Seared Halibut</span>
+          <span class="dish-price">44</span>
+          <span class="dish-desc">Wild-caught, beurre blanc, foraged mushroom medley</span>
+        </div>
+
+        <div class="dish">
+          <span class="dish-name">Herb-Crusted Lamb Rack</span>
+          <span class="dish-price">52</span>
+          <span class="dish-desc">Rosemary mustard, potato dauphinoise, red wine reduction</span>
+        </div>
+      </div>
+
+      <!-- Right column -->
+      <div>
+        <h3 class="menu-category-title">Mains &amp; More</h3>
+
+        <div class="dish">
+          <span class="dish-name">Wild Mushroom Risotto</span>
+          <span class="dish-price">28</span>
+          <span class="dish-desc">Arborio, porcini &amp; chanterelle, aged parmesan, truffle oil</span>
+        </div>
+
+        <div class="dish">
+          <span class="dish-name">Coq au Vin</span>
+          <span class="dish-price">36</span>
+          <span class="dish-desc">Red wine braised, pearl onion, lardon, pomme purée</span>
+        </div>
+
+        <div class="dish">
+          <span class="dish-name">Bouillabaisse Marseillaise</span>
+          <span class="dish-price">46</span>
+          <span class="dish-desc">Saffron-tomato broth, mussels, prawns, rouille crouton</span>
+        </div>
+
+        <h3 class="menu-category-title" style="margin-top:32px;">Dessert</h3>
+
+        <div class="dish">
+          <span class="dish-name">Tarte Tatin</span>
+          <span class="dish-price">16</span>
+          <span class="dish-desc">Caramelized apple, crème fraîche, calvados</span>
+        </div>
+
+        <div class="dish">
+          <span class="dish-name">Dark Chocolate Fondant</span>
+          <span class="dish-price">18</span>
+          <span class="dish-desc">Warm Valrhona center, vanilla bean ice cream, fleur de sel</span>
+        </div>
+
+        <div class="dish">
+          <span class="dish-name">Cheese Board</span>
+          <span class="dish-price">22</span>
+          <span class="dish-desc">Three French selections, quince paste, honeycomb, walnut bread</span>
+        </div>
+      </div>
+
+      <!-- Full-width food photo interlude -->
+      <div class="menu-photo-interlude reveal">
+        <img
+          src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80"
+          alt="Plated dish at La Maison — warm amber lighting across a white tablecloth"
+          loading="lazy"
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== GALLERY — Full-width atmosphere ====== -->
+<section class="gallery reveal">
+  <div class="gallery-strip">
+    <figure>
+      <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80" alt="Warm candlelit table setting" loading="lazy">
+    </figure>
+    <figure>
+      <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Plated dish in amber light" loading="lazy">
+    </figure>
+    <figure>
+      <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb51f3a?w=600&q=80" alt="Sommelier pouring wine" loading="lazy">
+    </figure>
+    <figure>
+      <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=600&q=80" alt="Plated fine dining dish close up" loading="lazy">
+    </figure>
+  </div>
+</section>
+
+<!-- ====== PRIVATE DINING ====== -->
+<section class="private" id="private">
+  <div class="section-inner">
+    <p class="section-eyebrow reveal">Private Dining</p>
+    <h2 class="section-title reveal" style="margin-bottom:48px;">An evening that's entirely yours.</h2>
+
+    <div class="private-grid reveal">
+      <div class="private-photo reveal">
+        <img
+          src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80"
+          alt="Long private dining table set for a celebration, candlelit"
+          loading="lazy"
+        >
+      </div>
+      <div class="private-text reveal-stagger">
+        <p>
+          The private room seats 8 to 24 guests, with a dedicated server and a custom menu built around
+          what's best at the market that week. Birthdays, anniversaries, corporate dinners, or just a
+          Tuesday that calls for something more.
+        </p>
+        <p>
+          Chef Marie works with you directly to design the evening — three courses or six,
+          wine pairings from the cellar, flowers on the table, and a kitchen that treats your
+          guests like family.
+        </p>
+        <ul class="private-features">
+          <li>Seats 8–24 guests</li>
+          <li>Custom seasonal menu</li>
+          <li>Wine &amp; cocktail pairings</li>
+          <li>Dedicated service staff</li>
+          <li>A/V for presentations</li>
+          <li>Floral &amp; décor styling</li>
+        </ul>
+        <a href="#booking" class="private-cta">Inquire About Private Dining →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== BOOKING ====== -->
+<section class="booking" id="booking">
+  <div class="section-inner">
+    <p class="section-eyebrow reveal">Reservations</p>
+    <h2 class="section-title reveal" style="margin-bottom:48px;">A table is waiting.</h2>
+
+    <div class="booking-grid reveal">
+      <div class="booking-info reveal-stagger">
+        <div class="hours">
+          <strong>Dinner</strong>
+          Wednesday — Sunday<br>
+          Bar opens 5:00pm<br>
+          Kitchen 6:00pm — 10:00pm<br>
+
+          <strong>Location</strong>
+          <address>
+            214 NW Everett Street<br>
+            Portland, Oregon 97209
+          </address>
+
+          <strong>Phone</strong>
+          (503) 555-0142<br><br>
+
+          <em style="font-size:0.85rem;color:#8C8278;">Private dining available for parties of 8–24.</em>
+        </div>
+      </div>
+
+      <div class="booking-form reveal">
+        <!-- Netlify Forms — replace with Resy/OpenTable embed if restaurant has one -->
+        <form name="reservation" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="reservation">
+          <p class="booking-embed-note" style="display:none;" aria-hidden="true">
+            <input name="bot-field">
+          </p>
+
+          <div class="form-group">
+            <label class="form-label" for="date">Date</label>
+            <input class="form-input form-select" type="date" id="date" name="date" required>
+          </div>
+
+          <div class="form-row-split">
+            <div class="form-group">
+              <label class="form-label" for="time">Time</label>
+              <select class="form-input form-select" id="time" name="time" required>
+                <option value="">Select</option>
+                <option>6:00 PM</option><option>6:30 PM</option><option>7:00 PM</option>
+                <option>7:30 PM</option><option>8:00 PM</option><option>8:30 PM</option>
+                <option>9:00 PM</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="guests">Guests</label>
+              <select class="form-input form-select" id="guests" name="guests" required>
+                <option value="">Select</option>
+                <option>1</option><option>2</option><option>3</option><option>4</option>
+                <option>5</option><option>6</option><option>7</option><option>8+</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="name">Name</label>
+            <input class="form-input" type="text" id="name" name="name" placeholder="Your name" required autocomplete="name">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-input" type="email" id="email" name="email" placeholder="you@email.com" required autocomplete="email">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="notes">Special requests (optional)</label>
+            <input class="form-input" type="text" id="notes" name="notes" placeholder="Allergies, celebration, seating preference...">
+          </div>
+
+          <button class="btn-reserve" type="submit">Reserve a Table</button>
+        </form>
+        <p class="booking-embed-note">
+          You'll receive a confirmation within 2 hours.<br>
+          For same-day bookings, please call (503) 555-0142.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer class="footer" id="visit" role="contentinfo">
+  <address>
+    <strong>La Maison</strong>
+    214 NW Everett Street, Portland, OR 97209<br>
+    (503) 555-0142 · <a href="mailto:hello@lamaison-portland.com" style="color:var(--amber);text-decoration:none;">hello@lamaison-portland.com</a>
+  </address>
+  <div class="footer-links">
+    <a href="#">Instagram</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Accessibility</a>
+    <a href="#">Press</a>
+  </div>
+</footer>
+
+<!-- ====== SCRIPTS ====== -->
+<script>
+  /* ===========================================================
+     NAV — Solid background after scrolling past hero
+     =========================================================== */
+
+  const nav = document.getElementById('nav');
+  const hero = document.getElementById('hero');
+
+  function updateNav() {
+    const heroBottom = hero.getBoundingClientRect().bottom;
+    if (heroBottom < 64) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  }
+
+  /* ===========================================================
+     HERO BG — Subtle parallax on scroll
+     =========================================================== */
+
+  const heroBg = document.getElementById('heroBg');
+
+  function updateHeroBg() {
+    const scrollY = window.scrollY;
+    if (scrollY < window.innerHeight) {
+      heroBg.style.transform = `translateY(${scrollY * 0.3}px)`;
+    }
+  }
+
+  /* ===========================================================
+     SCROLL REVEAL — IntersectionObserver
+     =========================================================== */
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '-40px 0px',
+    threshold: 0.1
+  };
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        // Once revealed, stop observing — don't re-animate
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => {
+    revealObserver.observe(el);
+  });
+
+  /* ===========================================================
+     COMBINED SCROLL HANDLER — Throttled
+     =========================================================== */
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        updateNav();
+        updateHeroBg();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+
+  // Initial state
+  updateNav();
+
+  /* ===========================================================
+     SMOOTH SCROLL — Offset for fixed nav
+     =========================================================== */
+
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        const navHeight = nav.offsetHeight;
+        const targetPosition = target.getBoundingClientRect().top + window.scrollY - navHeight - 16;
+        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+      }
+    });
+  });
+
+  /* Handle direct hash navigation on page load (e.g., index.html#booking).
+     Runs immediately — DOM is parsed at this point, no need to wait for
+     images/fonts on the load event.
+     Uses getElementById (not querySelector) so hash special-chars (#, ., :)
+     don't break CSS selector parsing. Uses legacy scrollTo(x,y) fallback
+     for old-browser compat (scrollTo({...}) is ES6+). */
+  (function() {
+    if (location.hash) {
+      var id = location.hash.slice(1);
+      var target = document.getElementById(id);
+      if (!target) return;
+      var navEl = document.getElementById('nav');
+      if (!navEl) return;
+      var navH = navEl.offsetHeight;
+      var topValue = target.offsetTop - navH - 16;
+      if (window.scrollTo.length === 1) {
+        window.scrollTo(0, topValue);
+      } else {
+        window.scrollTo({ top: topValue, behavior: 'auto' });
+      }
+    }
+  })();
+</script>
+
+</body>
+</html>
