@@ -119,7 +119,20 @@
 
 找到 `::selection` 块，将 `background: var(--amber)` 改为 `background: var(--sage)`。
 
-- [ ] **Step 6: 在浏览器中打开验证**
+- [ ] **Step 6: 更新 CSS 区块注释**
+
+将第 21-25 行的设计令牌注释更新：
+```css
+/* ================================================================
+   DESIGN TOKENS — Bistro Bellini
+   Palette: olive → stone → sage → gold
+   Type: Playfair Display / Cormorant Garamond / Source Serif 4
+   ================================================================ */
+```
+
+同时将第 434 行的菜单注释 `the amber dot on hover — a candle being lit` 改为 `the sage accent on hover`。
+
+- [ ] **Step 7: 在浏览器中打开验证**
 
 打开 `index.html`（双击或 `start index.html`），目视检查：
 - Hero 背景是否变成深橄榄色
@@ -127,7 +140,7 @@
 - 背景是否是暖石灰白色
 - Nav 滚动后的背景是否正常
 
-- [ ] **Step 7: 提交**
+- [ ] **Step 8: 提交**
 
 ```bash
 git add index.html
@@ -747,6 +760,7 @@ git commit -m "feat: replace all photos with Italian restaurant imagery"
 .gallery-strip figure {
   margin: 0;
   overflow: hidden;
+  -webkit-column-break-inside: avoid;
   break-inside: avoid;
   margin-bottom: 0;
 }
@@ -755,13 +769,12 @@ git commit -m "feat: replace all photos with Italian restaurant imagery"
   width: 100%;
   height: auto;
   display: block;
-  object-fit: cover;
-  filter: saturate(0.7) brightness(0.7);
+  filter: saturate(0.95) brightness(0.95);
   transition: filter 0.6s ease, transform 0.6s ease;
 }
 
 .gallery-strip figure:hover img {
-  filter: saturate(1) brightness(0.95);
+  filter: saturate(1) brightness(1);
   transform: scale(1.04);
 }
 
@@ -775,9 +788,9 @@ git commit -m "feat: replace all photos with Italian restaurant imagery"
 关键变化：
 - `grid-template-columns: repeat(4, 1fr)` → `columns: 4`
 - `aspect-ratio: 1` 移除（图片保留原始比例）
-- 新增 `break-inside: avoid` 防止图片跨列断裂
-- `img` 的 `height` 从 `100%` 改为 `auto`
-- 移除 `object-fit: cover` 上的 `width: 100%; height: 100%;`
+- 新增 `-webkit-column-break-inside: avoid` + `break-inside: avoid` 防止图片跨列断裂
+- `img` 的 `height` 从 `100%` 改为 `auto`，移除 `object-fit: cover`（height:auto 时无效）
+- Gallery 滤镜从 `saturate(0.7) brightness(0.7)` 改为 `saturate(0.95) brightness(0.95)`，匹配明调地中海风
 
 - [ ] **Step 2: 更新 Gallery 的 HTML 以混合宽高比**
 
@@ -872,7 +885,7 @@ git commit -m "feat: convert gallery to masonry layout — CSS columns, mixed as
 }
 
 .booking-confirmation h3 {
-  font-family: var(--section);
+  font-family: var(--font-section);
   font-weight: 600;
   font-size: 1.3rem;
   color: var(--olive);
@@ -937,6 +950,11 @@ git commit -m "feat: convert gallery to masonry layout — CSS columns, mixed as
 .booking-form.submitted form {
   display: none;
 }
+
+/* Hide the embed note when confirmation is showing (avoids duplicate text) */
+.booking-form.submitted .booking-embed-note {
+  display: none;
+}
 ```
 
 - [ ] **Step 2: 在预订表单 HTML 后添加确认卡片和 spinner**
@@ -984,6 +1002,12 @@ git commit -m "feat: convert gallery to masonry layout — CSS columns, mixed as
 
   form.addEventListener('submit', function(e) {
     e.preventDefault();
+
+    // Validate first — don't proceed if required fields are empty
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
 
     // Show spinner, hide form
     formContainer.classList.add('submitted');
