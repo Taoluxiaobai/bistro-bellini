@@ -19,26 +19,28 @@
 
 <style>
   /* ================================================================
-     DESIGN TOKENS — La Maison
-     Palette: espresso → cream → amber → gold
-     Type: Playfair Display / Cormorant Garamond / Inter
+     DESIGN TOKENS — Bistro Bellini
+     Palette: olive → stone → sage → gold
+     Type: Playfair Display / Cormorant Garamond / Source Serif 4
      ================================================================ */
 
   :root {
-    --espresso: #2C1810;
-    --espresso-90: rgba(44, 24, 16, 0.92);
-    --espresso-60: rgba(44, 24, 16, 0.60);
-    --espresso-40: rgba(44, 24, 16, 0.40);
-    --cream: #F5F0E8;
-    --cream-80: rgba(245, 240, 232, 0.80);
-    --amber: #C4956A;
-    --amber-15: rgba(196, 149, 106, 0.15);
-    --gold: #B8935A;
-    --gold-20: rgba(184, 147, 90, 0.20);
-    --warm-gray: #3A322C;
-    --light-warm: #E8DFD2;
-    --border-warm: #D4C8B8;
-    --white: #FFFDF9;
+    --olive: #1D241A;
+    --olive-90: rgba(29, 36, 26, 0.92);
+    --olive-60: rgba(29, 36, 26, 0.60);
+    --olive-40: rgba(29, 36, 26, 0.40);
+    --stone: #F7F4EE;
+    --stone-80: rgba(247, 244, 238, 0.80);
+    --sage: #6B7D52;
+    --sage-15: rgba(107, 125, 82, 0.15);
+    --gold: #C4A44A;
+    --gold-20: rgba(196, 164, 74, 0.20);
+    --warm-charcoal: #3A3832;
+    --light-warm: #E6E0D4;
+    --border-warm: #D2CCC0;
+    --white: #FFFDF7;
+    --muted: #8C8878;
+    --placeholder: #B5AFA0;
 
     --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
     --font-section: "Cormorant Garamond", "Times New Roman", serif;
@@ -61,8 +63,8 @@
     font-weight: 400;
     font-size: 1rem;
     line-height: 1.7;
-    color: var(--warm-gray);
-    background: var(--cream);
+    color: var(--warm-charcoal);
+    background: var(--stone);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -85,7 +87,7 @@
   }
 
   .nav.scrolled {
-    background: var(--espresso-90);
+    background: var(--olive-90);
     box-shadow: 0 1px 0 rgba(255,255,255,0.06);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -120,8 +122,8 @@
   }
 
   .nav-links a:hover {
-    color: var(--amber);
-    border-bottom-color: var(--amber);
+    color: var(--sage);
+    border-bottom-color: var(--sage);
   }
 
   .nav-cta {
@@ -129,8 +131,8 @@
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: var(--espresso);
-    background: var(--amber);
+    color: var(--olive);
+    background: var(--sage);
     padding: 8px 20px;
     border-radius: 3px;
     text-decoration: none;
@@ -151,7 +153,7 @@
       gap: 8px;
     }
     .nav.scrolled {
-      background: var(--espresso);
+      background: var(--olive);
     }
     .nav-logo {
       flex: 0 0 auto;
@@ -205,7 +207,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--espresso);
+    background: var(--olive);
     position: relative;
   }
 
@@ -226,7 +228,7 @@
   .hero-overlay {
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at center, transparent 45%, var(--espresso) 80%);
+    background: radial-gradient(ellipse at center, transparent 45%, var(--olive) 80%);
   }
 
   .hero-content {
@@ -272,7 +274,7 @@
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.2em;
-    color: var(--amber);
+    color: var(--sage);
   }
 
   @keyframes heroReveal {
@@ -295,7 +297,7 @@
   .scroll-line {
     width: 1px;
     height: 40px;
-    background: linear-gradient(to bottom, var(--amber), transparent);
+    background: linear-gradient(to bottom, var(--sage), transparent);
     animation: scrollPulse 2.4s ease-in-out infinite;
   }
 
@@ -316,7 +318,7 @@
      ================================================================ */
 
   .story {
-    background: var(--cream);
+    background: var(--stone);
     padding: 120px 0;
   }
 
@@ -336,7 +338,7 @@
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.22em;
-    color: var(--amber);
+    color: var(--sage);
     margin-bottom: 20px;
   }
 
@@ -345,14 +347,14 @@
     font-weight: 600;
     font-size: clamp(1.6rem, 3.2vw, 2.1rem);
     line-height: 1.25;
-    color: var(--espresso);
+    color: var(--olive);
     margin-bottom: 20px;
   }
 
   .story-text p {
     font-size: 0.95rem;
     line-height: 1.8;
-    color: var(--warm-gray);
+    color: var(--warm-charcoal);
     margin-bottom: 16px;
   }
 
@@ -371,7 +373,7 @@
     font-weight: 400;
     font-size: 1.2rem;
     line-height: 1.55;
-    color: var(--espresso);
+    color: var(--olive);
   }
 
   .chef-quote cite {
@@ -382,7 +384,7 @@
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.12em;
-    color: var(--amber);
+    color: var(--sage);
   }
 
   .story-photo {
@@ -431,7 +433,7 @@
 
   /* ================================================================
      MENU — Light cream background. Two-column editorial grid.
-     SIGNATURE: the amber dot on hover — a candle being lit.
+     SIGNATURE: the sage accent on hover.
      ================================================================ */
 
   .menu {
@@ -449,7 +451,7 @@
     font-family: var(--font-section);
     font-weight: 600;
     font-size: 1.15rem;
-    color: var(--espresso);
+    color: var(--olive);
     margin-bottom: 20px;
     padding-bottom: 10px;
     border-bottom: 1px solid var(--border-warm);
@@ -476,7 +478,7 @@
     top: 0;
     bottom: 0;
     width: 3px;
-    background: var(--amber);
+    background: var(--sage);
     border-radius: 0 2px 2px 0;
     opacity: 0;
     transform: scaleY(0.5);
@@ -486,7 +488,7 @@
   .dish:hover::before {
     opacity: 1;
     transform: scaleY(0.85);
-    box-shadow: 0 0 14px 3px var(--amber-15);
+    box-shadow: 0 0 14px 3px var(--sage-15);
   }
 
   .dish:hover {
@@ -497,21 +499,21 @@
     font-family: var(--font-body);
     font-weight: 500;
     font-size: 0.95rem;
-    color: var(--espresso);
+    color: var(--olive);
     grid-column: 1;
     grid-row: 1;
     transition: color 0.3s;
   }
 
   .dish:hover .dish-name {
-    color: var(--amber);
+    color: var(--sage);
   }
 
   .dish-price {
     font-family: var(--font-section);
     font-weight: 600;
     font-size: 0.95rem;
-    color: var(--warm-gray);
+    color: var(--warm-charcoal);
     grid-column: 2;
     grid-row: 1;
     text-align: right;
@@ -519,13 +521,13 @@
   }
 
   .dish:hover .dish-price {
-    color: var(--amber);
+    color: var(--sage);
   }
 
   .dish-desc {
     font-size: 0.8rem;
     line-height: 1.55;
-    color: #8C8278;
+    color: var(--muted);
     grid-column: 1 / -1;
     grid-row: 2;
     margin-top: 3px;
@@ -564,7 +566,7 @@
      ================================================================ */
 
   .gallery {
-    background: var(--espresso);
+    background: var(--olive);
     padding: 0;
   }
 
@@ -623,7 +625,7 @@
   .private-text p {
     font-size: 0.95rem;
     line-height: 1.8;
-    color: var(--warm-gray);
+    color: var(--warm-charcoal);
     margin-bottom: 14px;
   }
 
@@ -637,7 +639,7 @@
 
   .private-features li {
     font-size: 0.8rem;
-    color: var(--warm-gray);
+    color: var(--warm-charcoal);
     padding: 10px 0;
     border-bottom: 1px dotted var(--border-warm);
   }
@@ -647,7 +649,7 @@
     display: inline-block;
     width: 6px; height: 6px;
     border-radius: 50%;
-    background: var(--amber);
+    background: var(--sage);
     margin-right: 10px;
     vertical-align: middle;
   }
@@ -672,16 +674,16 @@
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.18em;
-    color: var(--amber);
+    color: var(--sage);
     text-decoration: none;
-    border-bottom: 1px solid var(--amber);
+    border-bottom: 1px solid var(--sage);
     padding-bottom: 4px;
     transition: color 0.3s, border-color 0.3s;
   }
 
   .private-cta:hover {
-    color: var(--espresso);
-    border-color: var(--espresso);
+    color: var(--olive);
+    border-color: var(--olive);
   }
 
   @media (max-width: 767px) {
@@ -702,7 +704,7 @@
      ================================================================ */
 
   .booking {
-    background: var(--cream);
+    background: var(--stone);
     padding: 120px 0;
   }
 
@@ -720,13 +722,13 @@
   .booking-info .hours {
     font-size: 0.9rem;
     line-height: 2;
-    color: var(--warm-gray);
+    color: var(--warm-charcoal);
   }
 
   .booking-info .hours strong {
     display: block;
     font-weight: 500;
-    color: var(--espresso);
+    color: var(--olive);
     margin-top: 20px;
     font-size: 0.7rem;
     text-transform: uppercase;
@@ -739,7 +741,7 @@
     font-style: normal;
     margin-top: 20px;
     font-size: 0.85rem;
-    color: #8C8278;
+    color: var(--muted);
     line-height: 1.7;
   }
 
@@ -761,7 +763,7 @@
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: var(--amber);
+    color: var(--sage);
     margin-bottom: 6px;
   }
 
@@ -770,8 +772,8 @@
     padding: 12px 14px;
     font-family: var(--font-body);
     font-size: 0.9rem;
-    color: var(--espresso);
-    background: var(--cream);
+    color: var(--olive);
+    background: var(--stone);
     border: 1px solid var(--border-warm);
     border-radius: 2px;
     transition: border-color 0.3s, box-shadow 0.3s;
@@ -779,12 +781,12 @@
   }
 
   .form-input:focus {
-    border-color: var(--amber);
-    box-shadow: 0 0 0 3px var(--amber-15);
+    border-color: var(--sage);
+    box-shadow: 0 0 0 3px var(--sage-15);
   }
 
   .form-input::placeholder {
-    color: #B8AFA5;
+    color: var(--placeholder);
   }
 
   .form-row-split {
@@ -812,7 +814,7 @@
     text-transform: uppercase;
     letter-spacing: 0.2em;
     color: var(--white);
-    background: var(--espresso);
+    background: var(--olive);
     border: none;
     border-radius: 2px;
     cursor: pointer;
@@ -820,12 +822,12 @@
   }
 
   .btn-reserve:hover {
-    background: var(--amber);
+    background: var(--sage);
     transform: translateY(-2px);
   }
 
   .btn-reserve:focus-visible {
-    outline: 2px solid var(--amber);
+    outline: 2px solid var(--sage);
     outline-offset: 2px;
   }
 
@@ -833,7 +835,7 @@
   .booking-embed-note {
     margin-top: 16px;
     font-size: 0.7rem;
-    color: #B8AFA5;
+    color: var(--placeholder);
     text-align: center;
   }
 
@@ -854,7 +856,7 @@
      ================================================================ */
 
   .footer {
-    background: var(--espresso);
+    background: var(--olive);
     padding: 48px 40px;
     text-align: center;
   }
@@ -863,7 +865,7 @@
     font-style: normal;
     font-size: 0.8rem;
     line-height: 1.9;
-    color: #8C8278;
+    color: var(--muted);
   }
 
   .footer address strong {
@@ -885,14 +887,14 @@
   }
 
   .footer-links a {
-    color: #6E655C;
+    color: var(--muted);
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 0.12em;
     transition: color 0.3s;
   }
 
-  .footer-links a:hover { color: var(--amber); }
+  .footer-links a:hover { color: var(--sage); }
 
   /* ================================================================
      SCROLL REVEAL — IntersectionObserver driven.
@@ -951,7 +953,7 @@
      ================================================================ */
 
   :focus-visible {
-    outline: 2px solid var(--amber);
+    outline: 2px solid var(--sage);
     outline-offset: 2px;
   }
 
@@ -964,7 +966,7 @@
      ================================================================ */
 
   ::selection {
-    background: var(--amber);
+    background: var(--sage);
     color: var(--white);
   }
 
@@ -981,8 +983,8 @@
     font-family: var(--font-body);
     font-size: 0.75rem;
     font-weight: 500;
-    color: var(--espresso);
-    background: var(--amber);
+    color: var(--olive);
+    background: var(--sage);
     border-radius: 2px;
     text-decoration: none;
     transition: top 0.2s ease;
@@ -1251,7 +1253,7 @@
           <strong>Phone</strong>
           (503) 555-0142<br><br>
 
-          <em style="font-size:0.85rem;color:#8C8278;">Private dining available for parties of 8–24.</em>
+          <em style="font-size:0.85rem;color:var(--muted);">Private dining available for parties of 8–24.</em>
         </div>
       </div>
 
@@ -1319,7 +1321,7 @@
   <address>
     <strong>La Maison</strong>
     214 NW Everett Street, Portland, OR 97209<br>
-    (503) 555-0142 · <a href="mailto:hello@lamaison-portland.com" style="color:var(--amber);text-decoration:none;">hello@lamaison-portland.com</a>
+    (503) 555-0142 · <a href="mailto:hello@lamaison-portland.com" style="color:var(--sage);text-decoration:none;">hello@lamaison-portland.com</a>
   </address>
   <div class="footer-links">
     <a href="#">Instagram</a>
