@@ -76,6 +76,8 @@
     --light-warm: #E6E0D4;
     --border-warm: #D2CCC0;
     --white: #FFFDF7;
+    --muted: #8C8878;
+    --placeholder: #B5AFA0;
 
     --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
     --font-section: "Cormorant Garamond", "Times New Roman", serif;
@@ -104,12 +106,14 @@
 
 运行：全文搜索替换。在编辑器中用正则 `--espresso\b` → `--olive`、`--cream\b` → `--stone`、`--amber\b` → `--sage`、`--warm-gray\b` → `--warm-charcoal`。`--gold` 和 `--gold-20` 名称不变，跳过。
 
-- [ ] **Step 4: 替换硬编码颜色值**
+- [ ] **Step 4: 替换硬编码颜色值为 CSS 变量**
 
-搜索并替换文件中不在 CSS 变量中使用的硬编码颜色：
-- `#8C8278`（菜单描述、地址等）→ `#8C8878`（保持暖灰色调，在新色板上略微调整）
-- `#B8AFA5`（placeholder 色）→ `#B5AFA0`
-- `#6E655C`（footer 链接）→ `#6E6A60`
+搜索并替换文件中不在 CSS 变量中使用的硬编码颜色，统一替换为新增的令牌：
+- `#8C8278`（菜单描述、地址等）→ `var(--muted)`
+- `#B8AFA5`（placeholder 色）→ `var(--placeholder)`
+- `#6E655C`（footer 链接）→ `var(--muted)`
+
+同时更新 T3 中 Booking 区段的硬编码色值 `#8C8878` → `var(--muted)`。
 
 - [ ] **Step 5: 更新 `::selection` 颜色**
 
