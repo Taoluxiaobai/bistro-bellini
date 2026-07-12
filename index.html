@@ -3,46 +3,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>La Maison — Seasonal French Cuisine</title>
-<meta name="description" content="La Maison. Seasonal French cuisine in Portland since 2012. Chef Marie Laurent.">
+<title>Bistro Bellini — Handmade Italian Cuisine</title>
+<meta name="description" content="Bistro Bellini. Handmade Italian cuisine featuring seasonal Mediterranean ingredients. Reserve a table.">
 
 <!-- Open Graph -->
-<meta property="og:title" content="La Maison — Seasonal French Cuisine">
-<meta property="og:description" content="Seasonal French cuisine in Portland since 2012. Reserve a table.">
+<meta property="og:title" content="Bistro Bellini — Handmade Italian Cuisine">
+<meta property="og:description" content="Handmade Italian cuisine with seasonal Mediterranean ingredients. Reserve a table.">
 <meta property="og:type" content="restaurant">
-<meta property="og:image" content="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200">
+<meta property="og:image" content="https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=1200">
 
 <!-- Fonts: Playfair Display (display), Cormorant Garamond (section titles), Inter (body) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,400;1,600&family=Inter:opsz,wght@14..32,400;14..32,500&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,400;1,600&family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap" rel="stylesheet">
 
 <style>
   /* ================================================================
-     DESIGN TOKENS — La Maison
-     Palette: espresso → cream → amber → gold
-     Type: Playfair Display / Cormorant Garamond / Inter
+     DESIGN TOKENS — Bistro Bellini
+     Palette: olive → stone → sage → gold
+     Type: Playfair Display / Cormorant Garamond / Source Serif 4
      ================================================================ */
 
   :root {
-    --espresso: #2C1810;
-    --espresso-90: rgba(44, 24, 16, 0.92);
-    --espresso-60: rgba(44, 24, 16, 0.60);
-    --espresso-40: rgba(44, 24, 16, 0.40);
-    --cream: #F5F0E8;
-    --cream-80: rgba(245, 240, 232, 0.80);
-    --amber: #C4956A;
-    --amber-15: rgba(196, 149, 106, 0.15);
-    --gold: #B8935A;
-    --gold-20: rgba(184, 147, 90, 0.20);
-    --warm-gray: #3A322C;
-    --light-warm: #E8DFD2;
-    --border-warm: #D4C8B8;
-    --white: #FFFDF9;
+    --olive: #1D241A;
+    --olive-90: rgba(29, 36, 26, 0.92);
+    --olive-60: rgba(29, 36, 26, 0.60);
+    --olive-40: rgba(29, 36, 26, 0.40);
+    --stone: #F7F4EE;
+    --stone-80: rgba(247, 244, 238, 0.80);
+    --sage: #6B7D52;
+    --sage-15: rgba(107, 125, 82, 0.15);
+    --gold: #C4A44A;
+    --gold-20: rgba(196, 164, 74, 0.20);
+    --warm-charcoal: #3A3832;
+    --light-warm: #E6E0D4;
+    --border-warm: #D2CCC0;
+    --white: #FFFDF7;
+    --muted: #8C8878;
+    --placeholder: #B5AFA0;
 
     --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
     --font-section: "Cormorant Garamond", "Times New Roman", serif;
-    --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-body: "Source Serif 4", Georgia, "Times New Roman", serif;
 
     --max-text: 720px;
     --max-wide: 1040px;
@@ -61,8 +63,8 @@
     font-weight: 400;
     font-size: 1rem;
     line-height: 1.7;
-    color: var(--warm-gray);
-    background: var(--cream);
+    color: var(--warm-charcoal);
+    background: var(--stone);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -85,7 +87,7 @@
   }
 
   .nav.scrolled {
-    background: var(--espresso-90);
+    background: var(--olive-90);
     box-shadow: 0 1px 0 rgba(255,255,255,0.06);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -120,8 +122,8 @@
   }
 
   .nav-links a:hover {
-    color: var(--amber);
-    border-bottom-color: var(--amber);
+    color: var(--sage);
+    border-bottom-color: var(--sage);
   }
 
   .nav-cta {
@@ -129,8 +131,8 @@
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: var(--espresso);
-    background: var(--amber);
+    color: var(--olive);
+    background: var(--sage);
     padding: 8px 20px;
     border-radius: 3px;
     text-decoration: none;
@@ -151,7 +153,7 @@
       gap: 8px;
     }
     .nav.scrolled {
-      background: var(--espresso);
+      background: var(--olive);
     }
     .nav-logo {
       flex: 0 0 auto;
@@ -205,7 +207,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--espresso);
+    background: var(--olive);
     position: relative;
   }
 
@@ -213,7 +215,7 @@
   .hero-bg {
     position: absolute;
     inset: 0;
-    background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1800&q=80');
+    background-image: url('https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=1800&q=80');
     background-size: cover;
     background-position: center;
     opacity: 0.55;
@@ -226,7 +228,7 @@
   .hero-overlay {
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at center, transparent 45%, var(--espresso) 80%);
+    background: radial-gradient(ellipse at center, transparent 45%, var(--olive) 80%);
   }
 
   .hero-content {
@@ -272,7 +274,7 @@
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.2em;
-    color: var(--amber);
+    color: var(--sage);
   }
 
   @keyframes heroReveal {
@@ -295,7 +297,7 @@
   .scroll-line {
     width: 1px;
     height: 40px;
-    background: linear-gradient(to bottom, var(--amber), transparent);
+    background: linear-gradient(to bottom, var(--sage), transparent);
     animation: scrollPulse 2.4s ease-in-out infinite;
   }
 
@@ -316,7 +318,7 @@
      ================================================================ */
 
   .story {
-    background: var(--cream);
+    background: var(--stone);
     padding: 120px 0;
   }
 
@@ -336,7 +338,7 @@
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.22em;
-    color: var(--amber);
+    color: var(--sage);
     margin-bottom: 20px;
   }
 
@@ -345,14 +347,14 @@
     font-weight: 600;
     font-size: clamp(1.6rem, 3.2vw, 2.1rem);
     line-height: 1.25;
-    color: var(--espresso);
+    color: var(--olive);
     margin-bottom: 20px;
   }
 
   .story-text p {
     font-size: 0.95rem;
     line-height: 1.8;
-    color: var(--warm-gray);
+    color: var(--warm-charcoal);
     margin-bottom: 16px;
   }
 
@@ -371,7 +373,7 @@
     font-weight: 400;
     font-size: 1.2rem;
     line-height: 1.55;
-    color: var(--espresso);
+    color: var(--olive);
   }
 
   .chef-quote cite {
@@ -382,7 +384,7 @@
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.12em;
-    color: var(--amber);
+    color: var(--sage);
   }
 
   .story-photo {
@@ -431,7 +433,7 @@
 
   /* ================================================================
      MENU — Light cream background. Two-column editorial grid.
-     SIGNATURE: the amber dot on hover — a candle being lit.
+     SIGNATURE: the sage accent on hover.
      ================================================================ */
 
   .menu {
@@ -449,7 +451,7 @@
     font-family: var(--font-section);
     font-weight: 600;
     font-size: 1.15rem;
-    color: var(--espresso);
+    color: var(--olive);
     margin-bottom: 20px;
     padding-bottom: 10px;
     border-bottom: 1px solid var(--border-warm);
@@ -476,7 +478,7 @@
     top: 0;
     bottom: 0;
     width: 3px;
-    background: var(--amber);
+    background: var(--sage);
     border-radius: 0 2px 2px 0;
     opacity: 0;
     transform: scaleY(0.5);
@@ -486,7 +488,7 @@
   .dish:hover::before {
     opacity: 1;
     transform: scaleY(0.85);
-    box-shadow: 0 0 14px 3px var(--amber-15);
+    box-shadow: 0 0 14px 3px var(--sage-15);
   }
 
   .dish:hover {
@@ -497,21 +499,21 @@
     font-family: var(--font-body);
     font-weight: 500;
     font-size: 0.95rem;
-    color: var(--espresso);
+    color: var(--olive);
     grid-column: 1;
     grid-row: 1;
     transition: color 0.3s;
   }
 
   .dish:hover .dish-name {
-    color: var(--amber);
+    color: var(--sage);
   }
 
   .dish-price {
     font-family: var(--font-section);
     font-weight: 600;
     font-size: 0.95rem;
-    color: var(--warm-gray);
+    color: var(--warm-charcoal);
     grid-column: 2;
     grid-row: 1;
     text-align: right;
@@ -519,13 +521,13 @@
   }
 
   .dish:hover .dish-price {
-    color: var(--amber);
+    color: var(--sage);
   }
 
   .dish-desc {
     font-size: 0.8rem;
     line-height: 1.55;
-    color: #8C8278;
+    color: var(--muted);
     grid-column: 1 / -1;
     grid-row: 2;
     margin-top: 3px;
@@ -564,39 +566,40 @@
      ================================================================ */
 
   .gallery {
-    background: var(--espresso);
+    background: var(--olive);
     padding: 0;
   }
 
   .gallery-strip {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    columns: 4;
+    column-gap: 0;
     line-height: 0;
   }
 
   .gallery-strip figure {
     margin: 0;
     overflow: hidden;
-    position: relative;
-    aspect-ratio: 1;
+    -webkit-column-break-inside: avoid;
+    break-inside: avoid;
+    margin-bottom: 0;
   }
 
   .gallery-strip img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: saturate(0.7) brightness(0.7);
+    height: auto;
+    display: block;
+    filter: saturate(0.95) brightness(0.95);
     transition: filter 0.6s ease, transform 0.6s ease;
   }
 
   .gallery-strip figure:hover img {
-    filter: saturate(1) brightness(0.95);
+    filter: saturate(1) brightness(1);
     transform: scale(1.04);
   }
 
   @media (max-width: 767px) {
     .gallery-strip {
-      grid-template-columns: repeat(2, 1fr);
+      columns: 2;
     }
   }
 
@@ -623,7 +626,7 @@
   .private-text p {
     font-size: 0.95rem;
     line-height: 1.8;
-    color: var(--warm-gray);
+    color: var(--warm-charcoal);
     margin-bottom: 14px;
   }
 
@@ -637,7 +640,7 @@
 
   .private-features li {
     font-size: 0.8rem;
-    color: var(--warm-gray);
+    color: var(--warm-charcoal);
     padding: 10px 0;
     border-bottom: 1px dotted var(--border-warm);
   }
@@ -647,7 +650,7 @@
     display: inline-block;
     width: 6px; height: 6px;
     border-radius: 50%;
-    background: var(--amber);
+    background: var(--sage);
     margin-right: 10px;
     vertical-align: middle;
   }
@@ -672,16 +675,16 @@
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.18em;
-    color: var(--amber);
+    color: var(--sage);
     text-decoration: none;
-    border-bottom: 1px solid var(--amber);
+    border-bottom: 1px solid var(--sage);
     padding-bottom: 4px;
     transition: color 0.3s, border-color 0.3s;
   }
 
   .private-cta:hover {
-    color: var(--espresso);
-    border-color: var(--espresso);
+    color: var(--olive);
+    border-color: var(--olive);
   }
 
   @media (max-width: 767px) {
@@ -702,7 +705,7 @@
      ================================================================ */
 
   .booking {
-    background: var(--cream);
+    background: var(--stone);
     padding: 120px 0;
   }
 
@@ -720,13 +723,13 @@
   .booking-info .hours {
     font-size: 0.9rem;
     line-height: 2;
-    color: var(--warm-gray);
+    color: var(--warm-charcoal);
   }
 
   .booking-info .hours strong {
     display: block;
     font-weight: 500;
-    color: var(--espresso);
+    color: var(--olive);
     margin-top: 20px;
     font-size: 0.7rem;
     text-transform: uppercase;
@@ -739,7 +742,7 @@
     font-style: normal;
     margin-top: 20px;
     font-size: 0.85rem;
-    color: #8C8278;
+    color: var(--muted);
     line-height: 1.7;
   }
 
@@ -761,7 +764,7 @@
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: var(--amber);
+    color: var(--sage);
     margin-bottom: 6px;
   }
 
@@ -770,8 +773,8 @@
     padding: 12px 14px;
     font-family: var(--font-body);
     font-size: 0.9rem;
-    color: var(--espresso);
-    background: var(--cream);
+    color: var(--olive);
+    background: var(--stone);
     border: 1px solid var(--border-warm);
     border-radius: 2px;
     transition: border-color 0.3s, box-shadow 0.3s;
@@ -779,12 +782,12 @@
   }
 
   .form-input:focus {
-    border-color: var(--amber);
-    box-shadow: 0 0 0 3px var(--amber-15);
+    border-color: var(--sage);
+    box-shadow: 0 0 0 3px var(--sage-15);
   }
 
   .form-input::placeholder {
-    color: #B8AFA5;
+    color: var(--placeholder);
   }
 
   .form-row-split {
@@ -812,7 +815,7 @@
     text-transform: uppercase;
     letter-spacing: 0.2em;
     color: var(--white);
-    background: var(--espresso);
+    background: var(--olive);
     border: none;
     border-radius: 2px;
     cursor: pointer;
@@ -820,12 +823,12 @@
   }
 
   .btn-reserve:hover {
-    background: var(--amber);
+    background: var(--sage);
     transform: translateY(-2px);
   }
 
   .btn-reserve:focus-visible {
-    outline: 2px solid var(--amber);
+    outline: 2px solid var(--sage);
     outline-offset: 2px;
   }
 
@@ -833,7 +836,7 @@
   .booking-embed-note {
     margin-top: 16px;
     font-size: 0.7rem;
-    color: #B8AFA5;
+    color: var(--placeholder);
     text-align: center;
   }
 
@@ -854,7 +857,7 @@
      ================================================================ */
 
   .footer {
-    background: var(--espresso);
+    background: var(--olive);
     padding: 48px 40px;
     text-align: center;
   }
@@ -863,7 +866,7 @@
     font-style: normal;
     font-size: 0.8rem;
     line-height: 1.9;
-    color: #8C8278;
+    color: var(--muted);
   }
 
   .footer address strong {
@@ -885,14 +888,14 @@
   }
 
   .footer-links a {
-    color: #6E655C;
+    color: var(--muted);
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 0.12em;
     transition: color 0.3s;
   }
 
-  .footer-links a:hover { color: var(--amber); }
+  .footer-links a:hover { color: var(--sage); }
 
   /* ================================================================
      SCROLL REVEAL — IntersectionObserver driven.
@@ -951,7 +954,7 @@
      ================================================================ */
 
   :focus-visible {
-    outline: 2px solid var(--amber);
+    outline: 2px solid var(--sage);
     outline-offset: 2px;
   }
 
@@ -964,8 +967,105 @@
      ================================================================ */
 
   ::selection {
-    background: var(--amber);
+    background: var(--sage);
     color: var(--white);
+  }
+
+  /* ================================================================
+     BOOKING CONFIRMATION — Inline card replaces form on submit
+     ================================================================ */
+
+  .booking-confirmation {
+    display: none;
+    background: var(--white);
+    padding: 48px 36px;
+    border-radius: 2px;
+    border: 1px solid var(--border-warm);
+    text-align: center;
+  }
+
+  .booking-confirmation.visible {
+    display: block;
+    animation: confirmReveal 0.6s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  .booking-confirmation-icon {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+    display: block;
+    color: var(--sage);
+  }
+
+  .booking-confirmation h3 {
+    font-family: var(--font-section);
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: var(--olive);
+    margin-bottom: 12px;
+  }
+
+  .booking-confirmation p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--warm-charcoal);
+    max-width: 360px;
+    margin: 0 auto 8px;
+  }
+
+  .booking-confirmation .confirm-name {
+    font-weight: 500;
+    color: var(--olive);
+  }
+
+  .booking-confirmation .confirm-detail {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 14px;
+    line-height: 1.6;
+  }
+
+  /* Spinner — subtle pulse */
+  .booking-spinner {
+    display: none;
+    text-align: center;
+    padding: 48px 36px;
+  }
+
+  .booking-spinner.visible {
+    display: block;
+  }
+
+  .booking-spinner-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--sage);
+    margin: 0 4px;
+    animation: dotPulse 1.2s ease-in-out infinite;
+  }
+
+  .booking-spinner-dot:nth-child(2) { animation-delay: 0.2s; }
+  .booking-spinner-dot:nth-child(3) { animation-delay: 0.4s; }
+
+  @keyframes dotPulse {
+    0%, 80%, 100% { opacity: 0.3; transform: scale(0.8); }
+    40% { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes confirmReveal {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Hide form when submitting or confirmed */
+  .booking-form.submitted form {
+    display: none;
+  }
+
+  /* Hide the embed note when confirmation is showing */
+  .booking-form.submitted .booking-embed-note {
+    display: none;
   }
 
   /* ================================================================
@@ -981,8 +1081,8 @@
     font-family: var(--font-body);
     font-size: 0.75rem;
     font-weight: 500;
-    color: var(--espresso);
-    background: var(--amber);
+    color: var(--olive);
+    background: var(--sage);
     border-radius: 2px;
     text-decoration: none;
     transition: top 0.2s ease;
@@ -1000,7 +1100,7 @@
 
 <!-- ====== NAV ====== -->
 <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
-  <a href="#" class="nav-logo">La Maison</a>
+  <a href="#" class="nav-logo">Bellini</a>
   <ul class="nav-links">
     <li><a href="#story">Story</a></li>
     <li><a href="#menu">Menu</a></li>
@@ -1016,10 +1116,10 @@
   <div class="hero-overlay"></div>
 
   <div class="hero-content">
-    <h1 class="hero-name">La Maison</h1>
+    <h1 class="hero-name">Bistro Bellini</h1>
     <p class="hero-tagline">
-      Seasonal French cuisine in the heart of Portland.
-      <span>Since 2012</span>
+      Handmade Italian cuisine, seasonal Mediterranean ingredients.
+      <span>Est. 2018</span>
     </p>
   </div>
 
@@ -1037,27 +1137,28 @@
         <p class="section-eyebrow">Our Story</p>
         <h2 class="section-title">A kitchen built on Sunday family dinners.</h2>
         <p>
-          Chef Marie Laurent grew up in Lyon, where her grandmother ruled the stove
-          and the best conversations happened between courses. La Maison is her love
-          letter to that table — seasonal, unhurried, made with hands that remember.
+          Chef Marco Bellini grew up in Bologna, where his nonna ruled the stove
+          and the best conversations happened between courses of handmade tortellini.
+          Bistro Bellini is his love letter to that table — seasonal, unhurried,
+          made with hands that remember.
         </p>
         <p>
           Every dish starts with what the farmers bring in that morning. The menu
-          changes when the weather does. What stays the same: the butter comes from
-          Normandy, the wine list favors small producers, and the bread is baked
-          twice a day.
+          changes when the weather does. What stays the same: the olive oil comes from
+          a family grove in Tuscany, the wine list favors small Italian producers, and
+          the pasta is rolled by hand twice a day.
         </p>
         <div class="chef-quote">
           <blockquote>
-            "I'm not trying to reinvent French food. I'm trying to remind you why you fell in love with it."
+            "I'm not trying to reinvent Italian food. I'm trying to remind you why you fell in love with it."
           </blockquote>
-          <cite>— Marie Laurent, Chef &amp; Owner</cite>
+          <cite>— Marco Bellini, Chef &amp; Owner</cite>
         </div>
       </div>
       <div class="story-photo reveal">
         <img
-          src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=600&q=80"
-          alt="Chef Marie Laurent in the La Maison kitchen, plating a dish with focused precision"
+          src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=600&q=80"
+          alt="Chef Marco Bellini in the kitchen, finishing a plate of handmade pasta"
           loading="lazy"
         >
       </div>
@@ -1075,95 +1176,95 @@
 
       <!-- Left column -->
       <div>
-        <h3 class="menu-category-title">To Start</h3>
+        <h3 class="menu-category-title">Antipasti</h3>
 
         <div class="dish">
-          <span class="dish-name">Sunchoke Velouté</span>
+          <span class="dish-name">Burrata &amp; Heirloom Tomato</span>
+          <span class="dish-price">22</span>
+          <span class="dish-desc">Basil oil, aged balsamic, sea salt, grilled focaccia</span>
+        </div>
+
+        <div class="dish">
+          <span class="dish-name">Beef Carpaccio</span>
+          <span class="dish-price">26</span>
+          <span class="dish-desc">Shaved parmesan, wild arugula, truffle aioli, lemon</span>
+        </div>
+
+        <div class="dish">
+          <span class="dish-name">Arancini di Riso</span>
           <span class="dish-price">18</span>
-          <span class="dish-desc">Black truffle, toasted hazelnut, chive oil</span>
+          <span class="dish-desc">Crispy saffron risotto balls, mozzarella center, arrabbiata dip</span>
+        </div>
+
+        <h3 class="menu-category-title" style="margin-top:32px;">Primi</h3>
+
+        <div class="dish">
+          <span class="dish-name">Tagliatelle al Tartufo</span>
+          <span class="dish-price">34</span>
+          <span class="dish-desc">Hand-rolled pasta, black truffle, parmigiano cream, chives</span>
         </div>
 
         <div class="dish">
-          <span class="dish-name">Steak Tartare</span>
-          <span class="dish-price">24</span>
-          <span class="dish-desc">Hand-cut prime beef, caper, quail egg, grilled sourdough</span>
-        </div>
-
-        <div class="dish">
-          <span class="dish-name">Roasted Beet &amp; Chevre</span>
-          <span class="dish-price">16</span>
-          <span class="dish-desc">Whipped goat cheese, candied walnut, blood orange</span>
-        </div>
-
-        <h3 class="menu-category-title" style="margin-top:32px;">Mains</h3>
-
-        <div class="dish">
-          <span class="dish-name">Duck Confit</span>
+          <span class="dish-name">Risotto ai Frutti di Mare</span>
           <span class="dish-price">38</span>
-          <span class="dish-desc">Lavender honey, roasted root vegetables, thyme jus</span>
+          <span class="dish-desc">Carnaroli rice, clams, mussels, prawns, saffron brodo</span>
         </div>
 
         <div class="dish">
-          <span class="dish-name">Pan-Seared Halibut</span>
-          <span class="dish-price">44</span>
-          <span class="dish-desc">Wild-caught, beurre blanc, foraged mushroom medley</span>
-        </div>
-
-        <div class="dish">
-          <span class="dish-name">Herb-Crusted Lamb Rack</span>
-          <span class="dish-price">52</span>
-          <span class="dish-desc">Rosemary mustard, potato dauphinoise, red wine reduction</span>
+          <span class="dish-name">Pappardelle al Cinghiale</span>
+          <span class="dish-price">36</span>
+          <span class="dish-desc">Wide ribbon pasta, slow-braised wild boar ragù, pecorino</span>
         </div>
       </div>
 
       <!-- Right column -->
       <div>
-        <h3 class="menu-category-title">Mains &amp; More</h3>
+        <h3 class="menu-category-title">Secondi</h3>
 
         <div class="dish">
-          <span class="dish-name">Wild Mushroom Risotto</span>
-          <span class="dish-price">28</span>
-          <span class="dish-desc">Arborio, porcini &amp; chanterelle, aged parmesan, truffle oil</span>
+          <span class="dish-name">Branzino al Forno</span>
+          <span class="dish-price">42</span>
+          <span class="dish-desc">Whole roasted sea bass, capers, lemon, rosemary potatoes</span>
         </div>
 
         <div class="dish">
-          <span class="dish-name">Coq au Vin</span>
-          <span class="dish-price">36</span>
-          <span class="dish-desc">Red wine braised, pearl onion, lardon, pomme purée</span>
+          <span class="dish-name">Osso Buco alla Milanese</span>
+          <span class="dish-price">48</span>
+          <span class="dish-desc">Braised veal shank, gremolata, saffron risotto</span>
         </div>
 
         <div class="dish">
-          <span class="dish-name">Bouillabaisse Marseillaise</span>
-          <span class="dish-price">46</span>
-          <span class="dish-desc">Saffron-tomato broth, mussels, prawns, rouille crouton</span>
+          <span class="dish-name">Bistecca alla Fiorentina</span>
+          <span class="dish-price">56</span>
+          <span class="dish-desc">Grilled T-bone, rosemary-garlic oil, arugula &amp; parmesan</span>
         </div>
 
-        <h3 class="menu-category-title" style="margin-top:32px;">Dessert</h3>
+        <h3 class="menu-category-title" style="margin-top:32px;">Dolci</h3>
 
         <div class="dish">
-          <span class="dish-name">Tarte Tatin</span>
+          <span class="dish-name">Tiramisù Classico</span>
           <span class="dish-price">16</span>
-          <span class="dish-desc">Caramelized apple, crème fraîche, calvados</span>
+          <span class="dish-desc">Mascarpone, espresso-soaked savoiardi, Valrhona cocoa</span>
         </div>
 
         <div class="dish">
-          <span class="dish-name">Dark Chocolate Fondant</span>
-          <span class="dish-price">18</span>
-          <span class="dish-desc">Warm Valrhona center, vanilla bean ice cream, fleur de sel</span>
+          <span class="dish-name">Panna Cotta al Miele</span>
+          <span class="dish-price">14</span>
+          <span class="dish-desc">Vanilla bean, lavender honey, raspberry coulis, almond crumble</span>
         </div>
 
         <div class="dish">
-          <span class="dish-name">Cheese Board</span>
+          <span class="dish-name">Selezione di Formaggi</span>
           <span class="dish-price">22</span>
-          <span class="dish-desc">Three French selections, quince paste, honeycomb, walnut bread</span>
+          <span class="dish-desc">Three Italian cheeses, mostarda di frutta, honeycomb, walnut bread</span>
         </div>
       </div>
 
       <!-- Full-width food photo interlude -->
       <div class="menu-photo-interlude reveal">
         <img
-          src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80"
-          alt="Plated dish at La Maison — warm amber lighting across a white tablecloth"
+          src="https://images.unsplash.com/photo-1645112411341-6c4fd023714a?w=1200&q=80"
+          alt="Plated dish at Bistro Bellini — warm candlelight across a white tablecloth"
           loading="lazy"
         >
       </div>
@@ -1175,16 +1276,28 @@
 <section class="gallery reveal">
   <div class="gallery-strip">
     <figure>
-      <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80" alt="Warm candlelit table setting" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600&q=80" alt="Fresh handmade pasta drying on a rack" loading="lazy">
     </figure>
     <figure>
-      <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Plated dish in amber light" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=400&q=80" alt="Olive oil drizzled over a finished dish" loading="lazy">
     </figure>
     <figure>
-      <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb51f3a?w=600&q=80" alt="Sommelier pouring wine" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=500&q=80" alt="Plated Italian fine dining course" loading="lazy">
     </figure>
     <figure>
-      <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=600&q=80" alt="Plated fine dining dish close up" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=400&q=80" alt="Restaurant interior with warm candlelit tables" loading="lazy">
+    </figure>
+    <figure>
+      <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=600&q=80" alt="Elegant dining room with natural light" loading="lazy">
+    </figure>
+    <figure>
+      <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=400&q=80" alt="Ribeye steak plated with herbs" loading="lazy">
+    </figure>
+    <figure>
+      <img src="https://images.unsplash.com/photo-1498579150354-977475b7ea0b?w=500&q=80" alt="Wine being poured at a dinner table" loading="lazy">
+    </figure>
+    <figure>
+      <img src="https://images.unsplash.com/photo-1481931098730-318b6f776db0?w=400&q=80" alt="Fresh cherry tomatoes and basil on a wooden board" loading="lazy">
     </figure>
   </div>
 </section>
@@ -1198,7 +1311,7 @@
     <div class="private-grid reveal">
       <div class="private-photo reveal">
         <img
-          src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80"
+          src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=800&q=80"
           alt="Long private dining table set for a celebration, candlelit"
           loading="lazy"
         >
@@ -1210,7 +1323,7 @@
           Tuesday that calls for something more.
         </p>
         <p>
-          Chef Marie works with you directly to design the evening — three courses or six,
+          Chef Marco works with you directly to design the evening — three courses or six,
           wine pairings from the cellar, flowers on the table, and a kitchen that treats your
           guests like family.
         </p>
@@ -1238,20 +1351,20 @@
       <div class="booking-info reveal-stagger">
         <div class="hours">
           <strong>Dinner</strong>
-          Wednesday — Sunday<br>
+          Tuesday — Sunday<br>
           Bar opens 5:00pm<br>
           Kitchen 6:00pm — 10:00pm<br>
 
           <strong>Location</strong>
           <address>
-            214 NW Everett Street<br>
+            118 NW Everett Street<br>
             Portland, Oregon 97209
           </address>
 
           <strong>Phone</strong>
-          (503) 555-0142<br><br>
+          (503) 555-0187<br><br>
 
-          <em style="font-size:0.85rem;color:#8C8278;">Private dining available for parties of 8–24.</em>
+          <em style="font-size:0.85rem;color:var(--muted);">Private dining available for parties of 8–24.</em>
         </div>
       </div>
 
@@ -1305,9 +1418,25 @@
 
           <button class="btn-reserve" type="submit">Reserve a Table</button>
         </form>
+        <!-- Inline confirmation — hidden until form submit -->
+        <div class="booking-confirmation" id="bookingConfirm" aria-live="polite">
+          <span class="booking-confirmation-icon" aria-hidden="true">&#10003;</span>
+          <h3>Thank you, <span class="confirm-name" id="confirmName">friend</span>.</h3>
+          <p>Your reservation request has been received. We'll confirm within 2 hours.</p>
+          <p class="confirm-detail">
+            For same-day bookings or parties larger than 8,<br>
+            please call us at (503) 555-0187.
+          </p>
+        </div>
+        <!-- Spinner — shown briefly during submission -->
+        <div class="booking-spinner" id="bookingSpinner" aria-hidden="true">
+          <span class="booking-spinner-dot"></span>
+          <span class="booking-spinner-dot"></span>
+          <span class="booking-spinner-dot"></span>
+        </div>
         <p class="booking-embed-note">
           You'll receive a confirmation within 2 hours.<br>
-          For same-day bookings, please call (503) 555-0142.
+          For same-day bookings, please call (503) 555-0187.
         </p>
       </div>
     </div>
@@ -1317,9 +1446,9 @@
 <!-- ====== FOOTER ====== -->
 <footer class="footer" id="visit" role="contentinfo">
   <address>
-    <strong>La Maison</strong>
-    214 NW Everett Street, Portland, OR 97209<br>
-    (503) 555-0142 · <a href="mailto:hello@lamaison-portland.com" style="color:var(--amber);text-decoration:none;">hello@lamaison-portland.com</a>
+    <strong>Bistro Bellini</strong>
+    118 NW Everett Street, Portland, OR 97209<br>
+    (503) 555-0187 · <a href="mailto:hello@bistrobellini.com" style="color:var(--sage);text-decoration:none;">hello@bistrobellini.com</a>
   </address>
   <div class="footer-links">
     <a href="#">Instagram</a>
@@ -1440,6 +1569,45 @@
         window.scrollTo({ top: topValue, behavior: 'auto' });
       }
     }
+  })();
+
+  /* ===========================================================
+     BOOKING FORM — Inline confirmation on submit
+     =========================================================== */
+
+  (function() {
+    var form = document.querySelector('.booking-form form');
+    if (!form) return;
+
+    var formContainer = document.querySelector('.booking-form');
+    var confirmation = document.getElementById('bookingConfirm');
+    var spinner = document.getElementById('bookingSpinner');
+    var confirmName = document.getElementById('confirmName');
+    var nameInput = document.getElementById('name');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Validate first — don't proceed if required fields are empty
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      // Show spinner, hide form
+      formContainer.classList.add('submitted');
+      spinner.classList.add('visible');
+
+      // Read the name the user typed (fallback: "friend")
+      var guestName = (nameInput && nameInput.value.trim()) || 'friend';
+      confirmName.textContent = guestName;
+
+      // Simulate submission delay, then show confirmation
+      setTimeout(function() {
+        spinner.classList.remove('visible');
+        confirmation.classList.add('visible');
+      }, 1200);
+    });
   })();
 </script>
 
